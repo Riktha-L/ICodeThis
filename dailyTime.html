@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs"></script> <!-- Include Day.js -->
+    <div class="container">
+      <h1>Time</h1>
+      <div class="time" id="time">12:22:05</div>
+    </div>
+  </body>
+</html>
+<style>
+body { 
+background-color: #111111; 
+font-family: Arial, sans-serif; 
+display: flex; justify-content: center; 
+align-items: center; min-height: 100vh; 
+margin: 0; 
+} 
+.container { 
+  text-align: center; 
+  } 
+  h1 { 
+    color: #ffffff; 
+  } 
+  .time 
+  { 
+    border: 3px solid #ffffff; 
+    border-radius: 10px; 
+    color: #6681fa; font-size: 3rem; 
+    font-weight: bold; 
+    padding: 10px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+    width: 15rem; 
+  }
+</style>
+<script>
+function timeformat(){
+  const time=document.getElementById('time');
+  const now = dayjs().format('HH:mm:ss');
+  time.textContent = now;
+  setTimeout(timeformat, 1000);
+}
+timeformat();
+setInterval(timeformat,1000);
+
+</script>
